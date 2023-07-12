@@ -1,0 +1,52 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  color: white;
+  gap: .5rem;
+  position: relative;
+}
+
+.filter__select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: hsl(209, 23%, 22%);
+  padding: 0rem 1.5rem;
+  border-radius: 5px;
+
+}
+
+.filter__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 1.2rem 0rem;
+}
+
+.filter__dropdown {
+  background-color: hsl(209, 23%, 22%);
+  border-radius: 5px;
+  padding: 1.2rem 1.5rem;
+  display: none;
+  position: absolute;
+  top: 3.6rem;
+  width: 100%;
+}
+
+.filter__dropdown.active {
+  display: block;
+}
+
+.filter__dropdown ul {
+  list-style: none; 
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.filter__dropdown ul li {
+  cursor: pointer;
+}
+

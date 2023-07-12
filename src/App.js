@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import Layout from "./components/Layout/Layout";
+import Header from "./components/Header/Header";
+import Search from "./components/Search/Search";
+import Filter from "./components/Filter/Filter";
+import './app.css'
 
 function App() {
+
+  const [countryData, setCountryData] = useState([])
+
+  const getJson = () => {
+    fetch('data.json'
+    ,{
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    }
+    )
+    .then(resp => resp.json())
+    .then(json => setCountryData(json))
+    .catch(err => console.log(err))
+  }
+
+  useEffect(() => { 
+    getJson()
+  }, [])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <div className="search_and_filter">
+        <Search />
+        <Filter />
+      </div>
+    </>
   );
 }
 
