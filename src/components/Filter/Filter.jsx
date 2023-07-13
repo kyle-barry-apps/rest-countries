@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react'
 import { FilterContext } from '../../contexts/FilterContext'
 import { BsChevronDown } from 'react-icons/bs'
+import { BiRefresh } from 'react-icons/bi'
 import './filter.css'
 
 const Filter = () => {
@@ -15,6 +16,7 @@ const Filter = () => {
         <div className='filter__icon' onClick={() => setToggleDropdown(!toggleDropdown)}><BsChevronDown /></div>
       </div>
       <div className={toggleDropdown ? 'filter__dropdown active' : 'filter__dropdown'}>
+        {filterTerm !== 'all' && <div className='filter__refresh' onClick={() => setFilterTerm('all')}><BiRefresh /></div>}
         <ul>
           <li onClick={() => setFilterTerm('Africa')}>Africa</li>
           <li onClick={() => setFilterTerm('Americas')}>Americas</li>

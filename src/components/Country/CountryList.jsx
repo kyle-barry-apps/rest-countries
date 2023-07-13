@@ -9,7 +9,11 @@ const CountryList = ({countries}) => {
   const { searchTerm } = useContext(SearchContext)
   
   const filteredCountries = countries.filter((country) => {
-    return country.region.toLowerCase() === filterTerm.toLowerCase()
+    if (filterTerm !== 'all') 
+    {
+      return country.region.toLowerCase() === filterTerm.toLowerCase()
+    }
+    else return country
   })
 
   const searchedCountries = filteredCountries.filter((country) => {
