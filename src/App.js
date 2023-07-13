@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { SearchProvider } from "./contexts/SearchContext";
+import { FilterProvider } from "./contexts/FilterContext";
 import Layout from "./components/Layout/Layout";
 import Header from "./components/Header/Header";
 
@@ -26,10 +28,12 @@ function App() {
 
 
   return (
-    <>
-      <Header />
-      <Layout countries={countryData}/>
-    </>
+    <FilterProvider>
+      <SearchProvider>
+        <Header />
+        <Layout countries={countryData}/>
+      </SearchProvider>
+    </FilterProvider>
   );
 }
 

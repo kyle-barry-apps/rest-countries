@@ -4,6 +4,7 @@ import Filter from '../Filter/Filter'
 import './layout.css'
 
 const Layout = ({countries}) => {
+
   return (
     <div className='layout'>
       <div className="search_and_filter">

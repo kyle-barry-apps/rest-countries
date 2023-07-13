@@ -1,9 +1,12 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { FilterContext } from '../../contexts/FilterContext'
 import { BsChevronDown } from 'react-icons/bs'
 import './filter.css'
 
 const Filter = () => {
   const [toggleDropdown, setToggleDropdown] = useState(false)
+
+  const { filterTerm, setFilterTerm } = useContext(FilterContext)
 
   return (
     <div className="filter">
@@ -13,11 +16,11 @@ const Filter = () => {
       </div>
       <div className={toggleDropdown ? 'filter__dropdown active' : 'filter__dropdown'}>
         <ul>
-          <li>Africa</li>
-          <li>Americas</li>
-          <li>Asia</li>
-          <li>Europe</li>
-          <li>Oceania</li>
+          <li onClick={() => setFilterTerm('Africa')}>Africa</li>
+          <li onClick={() => setFilterTerm('Americas')}>Americas</li>
+          <li onClick={() => setFilterTerm('Asia')}>Asia</li>
+          <li onClick={() => setFilterTerm('Europe')}>Europe</li>
+          <li onClick={() => setFilterTerm('Oceania')}>Oceania</li>
         </ul>
       </div>
     </div>
