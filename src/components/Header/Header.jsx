@@ -6,10 +6,9 @@ const Header = () => {
     <div className='header'>
       <span className='header__title'>Where in the world?</span>
       <div className="header__mode">
-        <BsFillMoonFill />
+        <BsFillMoonFill size={12} />
         <span>Dark Mode</span>
       </div>
-
     </div>
   )
 }

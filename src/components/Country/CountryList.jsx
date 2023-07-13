@@ -1,9 +1,14 @@
-import React from 'react'
+import Country from "./Country"
 
-const CountryList = () => {
+const CountryList = ({countries}) => {
   return (
-    <div>CountryList</div>
+    countries.map((country, index) => {
+      return (
+        <Country key={index} country={country} />
+      )
+    })
   )
+
 }
 
 export default CountryList

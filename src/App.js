@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
 import Layout from "./components/Layout/Layout";
 import Header from "./components/Header/Header";
-import Search from "./components/Search/Search";
-import Filter from "./components/Filter/Filter";
-import './app.css'
 
 function App() {
 
@@ -31,10 +28,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className="search_and_filter">
-        <Search />
-        <Filter />
-      </div>
+      <Layout countries={countryData}/>
     </>
   );
 }
