@@ -1,8 +1,13 @@
+import { useContext } from 'react'
+import { CountryContext } from '../../contexts/CountryContext'
 import './country.css'
 
 const Country = ({country}) => {
+
+  const { setCountrySelected } = useContext(CountryContext)
+
   return (
-    <div className='country'>
+    <div className='country' onClick={() => setCountrySelected(country.name)}>
       <div className="country__image">
         <img src={country.flags.svg} alt="country flag" />
       </div>

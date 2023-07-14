@@ -40,7 +40,7 @@
 
 .filter__refresh {
   align-self: flex-end;
-  padding: .5rem;
+  padding: 1rem;
   cursor: pointer;
   transition: .15s;
   position: absolute;
