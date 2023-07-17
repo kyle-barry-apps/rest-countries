@@ -52,3 +52,89 @@
   max-height:100%;
 }
 
+.countryDetail {
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.countryDetail__back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem 1rem;
+  width: 7rem;
+  border-radius: 5px;
+  background-color: hsl(209, 23%, 22%);
+  box-sizing: 1px 1px 2px rgba(0,0,0,.35);
+  cursor: pointer;
+  margin-bottom: 5rem;
+}
+
+.countryDetail__back:hover {
+  opacity: .8;
+}
+
+
+.countryDetail__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35rem;
+  height: 20rem;
+  overflow: hidden;
+}
+
+.countryDetail__image img {
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100% 
+}
+
+.countryDetail__information {
+  display: flex;
+  gap: 5rem;
+}
+
+.countryDetail__details {
+  padding: 3rem;
+}
+
+.countryDetail__title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.countryDetail__data ul {
+ columns: 2;
+ list-style: none;
+}
+
+.countryDetail__data ul li {
+  margin-bottom: .4rem;
+}
+
+.countryDetail__data ul li {
+  color: hsl(0, 0%, 52%);
+}
+
+.countryDetail__data ul li span {
+  color: white;
+}
+
+.countryDetail__borders {
+  margin-top: 2rem;
+  display: flex; 
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.countryDetail__borders div { 
+  background-color: hsl(209, 23%, 22%);
+  color: hsl(0, 0%, 52%);
+  padding: .5rem 1rem;
+  border-radius: 5px;
+}
