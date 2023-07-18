@@ -1,5 +1,6 @@
 import { useState, useContext } from 'react'
 import { FilterContext } from '../../contexts/FilterContext'
+import { ThemeContext } from '../../contexts/ThemeContext'
 import { BsChevronDown } from 'react-icons/bs'
 import { BiRefresh } from 'react-icons/bi'
 import './filter.css'
@@ -7,15 +8,17 @@ import './filter.css'
 const Filter = () => {
   const [toggleDropdown, setToggleDropdown] = useState(false)
 
+  const { theme } = useContext(ThemeContext)
+
   const { filterTerm, setFilterTerm } = useContext(FilterContext)
 
   return (
-    <div className="filter">
-      <div className="filter__select">
+    <div className={theme === 'dark' ? 'filter' : 'filter light'}>
+      <div className={theme === 'dark' ? 'filter__select' : 'filter__select light'}>
         <span>Filter by region</span>
         <div className='filter__icon' onClick={() => setToggleDropdown(!toggleDropdown)}><BsChevronDown /></div>
       </div>
-      <div className={toggleDropdown ? 'filter__dropdown active' : 'filter__dropdown'}>
+      <div className={toggleDropdown && theme === 'dark' ? 'filter__dropdown active' : toggleDropdown && theme === 'light' ? 'filter__dropdown active light' : 'filter__dropdown'}>
         {filterTerm !== 'all' && <div className='filter__refresh' onClick={() => setFilterTerm('all')}><BiRefresh /></div>}
         <ul>
           <li onClick={() => setFilterTerm('Africa')}>Africa</li>

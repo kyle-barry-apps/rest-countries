@@ -4,6 +4,11 @@
   flex-direction: column;
 }
 
+.layout.light {
+  background-color: white;
+  color: black;
+}
+
 .layout__grid {
   margin-top: 3rem;
   display: grid;
@@ -13,8 +18,18 @@
   gap: 3rem;
 }
 
+.layout__grid.light {
+  background-color: white;
+  color: black; 
+}
+
 .search_and_filter {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.search_and_filter.light {
+  background-color: white;
+  color: black;  
 }

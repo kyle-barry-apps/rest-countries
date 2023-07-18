@@ -9,14 +9,15 @@ const Header = () => {
 
   useEffect(() => {
     localStorage.setItem('theme', theme);
+    document.body.classList = theme
   }, [theme]);
 
   return (
-    <div className='header'>
+    <div className={theme === 'dark' ? 'header' : 'header light'}>
       <span className='header__title'>Where in the world?</span>
       <div className="header__mode" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
         <BsFillMoonFill size={12} />
-        <span>Dark Mode</span>
+        <span>{theme === 'dark' ? 'Dark Mode' : 'Light Mode'}</span>
       </div>
     </div>
   )

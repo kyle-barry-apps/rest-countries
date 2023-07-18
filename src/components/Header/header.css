@@ -6,6 +6,13 @@
   justify-content: space-between;
   color: white;
   padding: 1.5rem 4rem;
+  box-shadow: 2px 2px 5px rgba(0,0,0,.35);
+
+}
+
+.header.light {
+  background-color: white;
+  color: black;
 }
 
 .header__title {

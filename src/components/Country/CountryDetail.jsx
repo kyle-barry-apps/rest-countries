@@ -1,11 +1,13 @@
 import { useContext } from 'react'
 import { CountryContext } from '../../contexts/CountryContext'
+import { ThemeContext } from '../../contexts/ThemeContext'
 import { BsArrowLeft } from 'react-icons/bs'
 
 
 const CountryDetail = ({ country }) => {
 
   const { setCountrySelected } = useContext(CountryContext)
+  const { theme } = useContext(ThemeContext)
 
 
   const languages = []
@@ -17,18 +19,18 @@ const CountryDetail = ({ country }) => {
 
   
   return (
-    <div className='countryDetail'>
-      <div onClick={()=> setCountrySelected(null)} className="countryDetail__back">
+    <div className={theme === 'dark' ? 'countryDetail' : 'countryDetail light'}>
+      <div onClick={()=> setCountrySelected(null)} className={theme === 'dark' ? 'countryDetail__back' : 'countryDetail__back light'}>
         <BsArrowLeft />
         <span>Back</span>
       </div>
       <div className="countryDetail__information">
-        <div className="countryDetail__image">
+        <div className={theme === 'dark' ? 'countryDetail__image' : 'countryDetail__image light'}>
           <img src={country.flags.svg} alt="country flag" />
         </div>
         <div className="countryDetail__details">
-          <div className="countryDetail__title">{country.name}</div>
-          <div className="countryDetail__data">
+          <div className={theme === 'dark' ? 'countryDetail__title' : 'countryDetail__title light'}>{country.name}</div>
+          <div className={theme === 'dark' ? 'countryDetail__data' : 'countryDetail__data light'}>
             <ul>
               <li><span>Native Name:</span> {country.nativeName}</li>
               <li><span>Population:</span> {country.population}</li>
@@ -42,7 +44,7 @@ const CountryDetail = ({ country }) => {
           </div>
           {'borders' in country && 
           
-          <div className="countryDetail__borders">
+          <div className={theme === 'dark' ? 'countryDetail__borders' : 'countryDetail__borders light'}>
             <span>Border Countries: </span>
             {country.borders.map((b) => (
               <div>{b}</div>

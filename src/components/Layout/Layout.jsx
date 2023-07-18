@@ -10,22 +10,22 @@ import './layout.css'
 const Layout = ({countries}) => {
 
   const { countrySelected, setCountrySelected } = useContext(CountryContext)
-  const { theme, setTheme } = useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext)
 
   const countryDetailData = countries.find((country) => country.name === countrySelected)
 
   return (
-    <div className='layout'>
+    <div className={theme === 'dark' ? 'layout' : 'layout light'}>
       {countrySelected ? (
         <CountryDetail country={countryDetailData} />
       ) : (
-        <div className="search_and_filter">
+        <div className={theme === 'dark' ? 'search_and_filter' : 'search_and_filter light'}>
           <Search />
           <Filter />
         </div>
       )}
       {!countrySelected && (
-        <div className="layout__grid">
+        <div className={theme === 'dark' ? 'layout__grid' : 'layout__grid light'}>
           <CountryList countries={countries} />
         </div>
       )}

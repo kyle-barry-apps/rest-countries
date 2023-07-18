@@ -5,6 +5,12 @@
   width: 30rem;
   background-color: hsl(209, 23%, 22%);
   border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,.35);
+}
+
+.search.light {
+  color: black;
+  background-color: white;
 }
 
 .search__icon {
@@ -28,13 +34,21 @@
   border: none;
   size: 200;
   width: 100%;
-  font-size: 1rem;
-  
+  font-size: 1rem;  
+}
+
+.search__area.light input {
+  color: black;
+  background-color: white;
 }
 
 .search__area input::placeholder {
   color: hsl(0, 0%, 52%);
   font-size: .9rem;
+}
+
+.icon__light {
+ color: hsl(0, 0%, 52%); 
 }
 
 

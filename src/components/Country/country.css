@@ -5,10 +5,15 @@
   color: white;
   border-radius: 5px;
   cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0,0,0,.35);
 }
 
 .country:hover {
   box-shadow: 0px 0px 2px 2px rgba(255,255,255, .3);
+}
+
+.country.light:hover {
+  box-shadow: 2px 2px 5px 5px rgba(0,0,0,.35); 
 }
 
 .country__image {
@@ -17,7 +22,7 @@
   justify-content: center;
   height: 50%;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 5px 5px 0px 0px;
 }
 
 .country__image img {
@@ -37,15 +42,30 @@
   color: hsl(0, 0%, 52%);
 }
 
+.country__data.light {
+  background-color: white;
+  color: black;
+  border-top: 1px solid rgba(0,0,0,.1);
+}
+
 .country__data span {
   color: white;
+  font-weight: 600;
+}
+
+.country__data.light span {
+  color: black;
 }
 
 .country__title {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: white;
   margin-bottom: .5rem;
+}
+
+.country__title.light {
+  color: black;
 }
 
 .country__image img {
@@ -68,15 +88,19 @@
   width: 7rem;
   border-radius: 5px;
   background-color: hsl(209, 23%, 22%);
-  box-sizing: 1px 1px 2px rgba(0,0,0,.35);
+  box-shadow: 1px 1px 2px rgba(0,0,0,.35);
   cursor: pointer;
   margin-bottom: 5rem;
+}
+
+.countryDetail__back.light {
+  background-color: white;
+  color: black;
 }
 
 .countryDetail__back:hover {
   opacity: .8;
 }
-
 
 .countryDetail__image {
   display: flex;
@@ -91,6 +115,10 @@
   object-fit: cover;
   min-width: 100%;
   min-height: 100% 
+}
+
+.countryDetail__image.light {
+  box-shadow: 2px 2px 5px rgba(0,0,0,.35);
 }
 
 .countryDetail__information {
@@ -109,13 +137,19 @@
   margin-bottom: 1.2rem;
 }
 
+.countryDetail__title.light {
+  color: black;
+}
+
 .countryDetail__data ul {
  columns: 2;
+ column-gap: 7rem;
  list-style: none;
 }
 
 .countryDetail__data ul li {
   margin-bottom: .4rem;
+  color: black;
 }
 
 .countryDetail__data ul li {
@@ -123,7 +157,12 @@
 }
 
 .countryDetail__data ul li span {
-  color: white;
+  color: white; 
+  font-weight: 600;
+}
+
+.countryDetail__data.light ul li span {
+  color: black;
 }
 
 .countryDetail__borders {
@@ -136,9 +175,20 @@
   flex-wrap: wrap;
 }
 
+.countryDetail__borders.light span {
+  color: black;
+  font-weight: 600;
+}
+
 .countryDetail__borders div { 
   background-color: hsl(209, 23%, 22%);
+  box-shadow: 2px 2px 5px rgba(0,0,0,.35);
   color: hsl(0, 0%, 52%);
   padding: .1rem 1rem;
   border-radius: 5px;
+}
+
+.countryDetail__borders.light div {
+  color: black;
+  background-color: white;
 }

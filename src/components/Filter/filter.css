@@ -5,6 +5,13 @@
   color: white;
   gap: .5rem;
   position: relative;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,.35);
+}
+
+.filter.light {
+  color: black; 
+  background-color: white;
 }
 
 .filter__select {
@@ -14,6 +21,10 @@
   background-color: hsl(209, 23%, 22%);
   padding: 0rem 1.5rem;
   border-radius: 5px;
+}
+
+.filter__select.light {
+  background-color: white;
 }
 
 .filter__icon {
@@ -32,6 +43,11 @@
   position: absolute;
   top: 3.6rem;
   width: 100%;
+ }
+
+ .filter__dropdown.light {
+  background-color: white;
+  color: black;
  }
 
 .filter__dropdown.active {
