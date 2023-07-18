@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { CountryContext } from '../../contexts/CountryContext'
+import { ThemeContext } from '../../contexts/ThemeContext'
 import CountryList from '../Country/CountryList'
 import CountryDetail from '../Country/CountryDetail'
 import Search from '../Search/Search'
@@ -9,6 +10,7 @@ import './layout.css'
 const Layout = ({countries}) => {
 
   const { countrySelected, setCountrySelected } = useContext(CountryContext)
+  const { theme, setTheme } = useContext(ThemeContext)
 
   const countryDetailData = countries.find((country) => country.name === countrySelected)
 

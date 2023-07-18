@@ -7,6 +7,7 @@ const CountryDetail = ({ country }) => {
 
   const { setCountrySelected } = useContext(CountryContext)
 
+
   const languages = []
   country.languages.map((l)=> {
     languages.push(l.name)
@@ -39,12 +40,15 @@ const CountryDetail = ({ country }) => {
               <li><span>Languages:</span> {languagesFormatted}</li>
             </ul>
           </div>
+          {'borders' in country && 
+          
           <div className="countryDetail__borders">
             <span>Border Countries: </span>
             {country.borders.map((b) => (
               <div>{b}</div>
             ))}
           </div>
+          }
         </div>
 
       </div>

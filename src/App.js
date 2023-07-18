@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { SearchProvider } from "./contexts/SearchContext";
 import { FilterProvider } from "./contexts/FilterContext";
 import { CountryProvider } from "./contexts/CountryContext";
+import { ThemeProvider } from "./contexts/ThemeContext";
 import Layout from "./components/Layout/Layout";
 import Header from "./components/Header/Header";
 
@@ -29,14 +30,16 @@ function App() {
 
 
   return (
-    <CountryProvider>
-      <FilterProvider>
-        <SearchProvider>
-          <Header />
-          <Layout countries={countryData}/>
-        </SearchProvider>
-      </FilterProvider>
-    </CountryProvider>
+    <ThemeProvider>
+      <CountryProvider>
+        <FilterProvider>
+          <SearchProvider>
+            <Header />
+            <Layout countries={countryData}/>
+          </SearchProvider>
+        </FilterProvider>
+      </CountryProvider>
+    </ThemeProvider>
   );
 }
 
