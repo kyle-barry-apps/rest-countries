@@ -9,10 +9,14 @@ const CountryDetail = ({ country }) => {
   const { setCountrySelected } = useContext(CountryContext)
   const { theme } = useContext(ThemeContext)
 
+  const formattedPopulation = country.population.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+
 
   const languages = []
   country.languages.map((l)=> {
+    return (
     languages.push(l.name)
+    )
   })
 
   const languagesFormatted = languages.join(', ')
@@ -33,7 +37,7 @@ const CountryDetail = ({ country }) => {
           <div className={theme === 'dark' ? 'countryDetail__data' : 'countryDetail__data light'}>
             <ul>
               <li><span>Native Name:</span> {country.nativeName}</li>
-              <li><span>Population:</span> {country.population}</li>
+              <li><span>Population:</span> {formattedPopulation}</li>
               <li><span>Region:</span> {country.region}</li>
               <li><span>Sub Region:</span> {country.subregion}</li>
               <li><span>Capital:</span> {country.capital}</li>
