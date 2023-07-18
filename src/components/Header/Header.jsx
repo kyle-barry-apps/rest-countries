@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { ThemeContext } from '../../contexts/ThemeContext'
 import { BsFillMoonFill } from 'react-icons/bs'
 import './header.css'
@@ -6,6 +6,10 @@ import './header.css'
 const Header = () => {
 
   const { theme, setTheme } = useContext(ThemeContext)
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   return (
     <div className='header'>
