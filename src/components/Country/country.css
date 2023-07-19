@@ -192,3 +192,51 @@
   color: black;
   background-color: white;
 }
+
+@media (max-width: 850px) {
+  .countryDetail__back {
+    align-items: start;
+    margin-bottom: 3rem;
+  }
+
+  .countryDetail__information {
+    flex-direction: column;
+  }
+
+  .countryDetail__details {
+    padding: 0;
+    min-width: 80vw;
+  }
+
+  .countryDetail__data ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .countryDetail__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    overflow: hidden;
+  }
+  
+  .countryDetail__data ul li {
+    margin: 0;
+  }
+
+  .countryDetail__information {
+    gap: 2rem;
+  }
+
+  .countryDetail__borders {
+    margin-top: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .countryDetail__image img {
+    object-fit: fill;
+  }
+}

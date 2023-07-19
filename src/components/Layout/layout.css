@@ -33,3 +33,29 @@
   background-color: white;
   color: black;  
 }
+
+@media (max-width: 1100px) {
+  .layout__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+ 
+}
+
+@media (max-width: 850px) {
+  .layout__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .search_and_filter {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: start;
+  }
+}
+
+@media (max-width: 575px) {
+  .layout__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+}
