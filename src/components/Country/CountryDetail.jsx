@@ -9,6 +9,8 @@ const CountryDetail = ({ country, countries }) => {
   const { setCountrySelected } = useContext(CountryContext)
   const { theme } = useContext(ThemeContext)
 
+  const regex = /\s*\([^)]*\)/g;
+
   const borderCountries = []
 
   if (country.borders) {
@@ -59,7 +61,7 @@ const CountryDetail = ({ country, countries }) => {
           <div className={theme === 'dark' ? 'countryDetail__borders' : 'countryDetail__borders light'}>
             <span>Border Countries: </span>
             {borderCountries.map((b) => (
-              <div onClick={() => setCountrySelected(b)}>{b}</div>
+              <div onClick={() => setCountrySelected(b)}>{b.replace(regex, "")}</div>
             ))}
           </div>
           }

@@ -5,6 +5,8 @@ import './country.css'
 
 const Country = ({country, countries}) => {
 
+  const regex = /\s*\([^)]*\)/g;
+
   const { setCountrySelected } = useContext(CountryContext)
   const { theme } = useContext(ThemeContext)
 
@@ -16,7 +18,7 @@ const Country = ({country, countries}) => {
         <img src={country.flags.svg} alt="country flag" />
       </div>
       <div className={theme === 'dark' ? 'country__data' : 'country__data light'}>
-        <div className={theme === 'dark' ? 'country__title' : 'country__title light'}>{country.name}</div>
+        <div className={theme === 'dark' ? 'country__title' : 'country__title light'}>{country.name.replace(regex, "")}</div>
         <div className="country__population"><span>Population: </span>{formattedPopulation}</div>
         <div className="country__region"><span>Region: </span>{country.region}</div>
         <div className="country__capital"><span>Capital: </span>{country.capital}</div>

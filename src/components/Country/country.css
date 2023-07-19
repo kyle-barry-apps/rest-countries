@@ -195,7 +195,7 @@
 }
 
 .countryDetail__borders.light div {
-  color: black;
+  color: hsl(0, 0%, 52%);
   background-color: white;
 }
 
