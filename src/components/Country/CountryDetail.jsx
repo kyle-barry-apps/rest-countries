@@ -4,10 +4,18 @@ import { ThemeContext } from '../../contexts/ThemeContext'
 import { BsArrowLeft } from 'react-icons/bs'
 
 
-const CountryDetail = ({ country }) => {
+const CountryDetail = ({ country, countries }) => {
 
   const { setCountrySelected } = useContext(CountryContext)
   const { theme } = useContext(ThemeContext)
+
+  const borderCountries = []
+
+  if (country.borders) {
+    country.borders.forEach((c) => {
+      borderCountries.push(countries.find(t => t.alpha3Code === c).name)
+    })
+  }
 
   const formattedPopulation = country.population.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
 
@@ -50,8 +58,8 @@ const CountryDetail = ({ country }) => {
           
           <div className={theme === 'dark' ? 'countryDetail__borders' : 'countryDetail__borders light'}>
             <span>Border Countries: </span>
-            {country.borders.map((b) => (
-              <div>{b}</div>
+            {borderCountries.map((b) => (
+              <div onClick={() => setCountrySelected(b)}>{b}</div>
             ))}
           </div>
           }

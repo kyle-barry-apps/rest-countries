@@ -17,7 +17,7 @@ const Layout = ({countries}) => {
   return (
     <div className={theme === 'dark' ? 'layout' : 'layout light'}>
       {countrySelected ? (
-        <CountryDetail country={countryDetailData} />
+        <CountryDetail country={countryDetailData} countries={countries} />
       ) : (
         <div className={theme === 'dark' ? 'search_and_filter' : 'search_and_filter light'}>
           <Search />

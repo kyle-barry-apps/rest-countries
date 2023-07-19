@@ -3,7 +3,7 @@ import { CountryContext } from '../../contexts/CountryContext'
 import { ThemeContext } from '../../contexts/ThemeContext'
 import './country.css'
 
-const Country = ({country}) => {
+const Country = ({country, countries}) => {
 
   const { setCountrySelected } = useContext(CountryContext)
   const { theme } = useContext(ThemeContext)

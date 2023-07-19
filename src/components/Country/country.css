@@ -186,6 +186,12 @@
   color: hsl(0, 0%, 52%);
   padding: .1rem 1rem;
   border-radius: 5px;
+  cursor: pointer;
+  transition: .15s;
+}
+
+.countryDetail__borders div:hover {
+  opacity: .8;
 }
 
 .countryDetail__borders.light div {
