@@ -9,7 +9,7 @@ import './layout.css'
 
 const Layout = ({countries}) => {
 
-  const { countrySelected, setCountrySelected } = useContext(CountryContext)
+  const { countrySelected } = useContext(CountryContext)
   const { theme } = useContext(ThemeContext)
 
   const countryDetailData = countries.find((country) => country.name === countrySelected)

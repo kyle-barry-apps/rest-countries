@@ -22,10 +22,10 @@ const Filter = () => {
   const { filterTerm, setFilterTerm } = useContext(FilterContext)
 
   return (
-    <div data-filter className={theme === 'dark' ? 'filter' : 'filter light'}>
+    <div data-filter onClick={() => setToggleDropdown(!toggleDropdown)} className={theme === 'dark' ? 'filter' : 'filter light'}>
       <div data-filter className={theme === 'dark' ? 'filter__select' : 'filter__select light'}>
         <span data-filter>Filter by region</span>
-        <div data-filter className='filter__icon' onClick={() => setToggleDropdown(!toggleDropdown)}><BsChevronDown data-filter /></div>
+        <div data-filter className='filter__icon' ><BsChevronDown data-filter /></div>
       </div>
       <div data-filter id='filter-dropdown' className={toggleDropdown && theme === 'dark' ? 'filter__dropdown active' : toggleDropdown && theme === 'light' ? 'filter__dropdown active light' : 'filter__dropdown'}>
         {filterTerm !== 'all' && <div className='filter__refresh' onClick={() => setFilterTerm('all')}><BiRefresh /></div>}

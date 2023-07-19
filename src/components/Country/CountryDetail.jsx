@@ -50,9 +50,9 @@ const CountryDetail = ({ country, countries }) => {
               <li><span>Population:</span> {formattedPopulation}</li>
               <li><span>Region:</span> {country.region}</li>
               <li><span>Sub Region:</span> {country.subregion}</li>
-              <li><span>Capital:</span> {country.capital}</li>
+              <li><span>Capital:</span> {country.capital ? country.capital : 'None'}</li>
               <li><span>Top Level Domain:</span> {country.topLevelDomain[0]}</li>
-              <li><span>Currencies:</span> {country.currencies[0].name}</li>
+              <li><span>Currencies:</span> {country.currencies ? country.currencies[0].name : 'None'}</li>
               <li><span>Languages:</span> {languagesFormatted}</li>
             </ul>
           </div>
@@ -60,8 +60,8 @@ const CountryDetail = ({ country, countries }) => {
           
           <div className={theme === 'dark' ? 'countryDetail__borders' : 'countryDetail__borders light'}>
             <span>Border Countries: </span>
-            {borderCountries.map((b) => (
-              <div onClick={() => setCountrySelected(b)}>{b.replace(regex, "")}</div>
+            {borderCountries.map((border, index) => (
+              <div key={index} onClick={() => setCountrySelected(border)}>{border.replace(regex, "")}</div>
             ))}
           </div>
           }
